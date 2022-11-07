@@ -2,24 +2,19 @@ window.addEventListener('DOMContentLoaded', function(){
     const searchBtn = document.querySelector("#searchBtn");
     console.log(searchBtn)
 
-    const okBtn= document.querySelector("#confirmBtn");
-
-    const customAlert=  document.getElementById("customAlert")
-    console.log(customAlert);
-
-    var message = document.getElementsByClassName('message')[0];
-    console.log(message);
-
-    function hidealert(){
-        customAlert.style.display = 'none';
-    }
-
+    let result = document.getElementById("result");
+    console.log(result);
 
     searchBtn.addEventListener('click', function(e) {
         e.preventDefault();
 
-        customAlert.style.display = 'block';
-        fetch("superheroes.php")
+        let input = document.getElementById("searchField").value;
+        console.log(input);
+
+        let url = `superheroes.php?name=${input}`
+        console.log(url)
+
+        fetch(url)
             .then(response => {
                 if (response.ok) {
                     return response.text()
@@ -29,15 +24,9 @@ window.addEventListener('DOMContentLoaded', function(){
             })
             .then(data => {
                 console.log(data)
-                message.innerText= data;
-                console.log(message.innerText.);
+                result.innerHTML= data;
+                console.log(result.innerHTML);
             })
             .catch(error => console.log('There was an error: ' + error));
     });
-
-    okBtn.addEventListener('click', function(e){
-        e.preventDefault();
-
-        customAlert.style.display = 'none';
-    })
 });

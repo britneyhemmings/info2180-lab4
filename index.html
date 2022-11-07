@@ -9,15 +9,22 @@
     <script src="app.js"></script>
   </head>
   <body>
-    <h1>Avengers Character Search</h1>
-    <div class="controls">
-        <button type = "button" id="searchBtn" class= "btn">Search</button>
-    </div>
-    <div id = "customAlert">
-        <div id = "alertbox">
-            <div class = "message"></div>
-            <button type = "button" id = "confirmBtn">OK</button>
+    <header>
+      <div class = "container">
+        <h1>Avengers Character Search</h1>
+      </div>
+    </header>
+    <div class = "form-container">
+      <form action="#" method="post">
+        <p> Search by Full Name or Alias </p>
+        <div class="form-group">
+            <input type="text" name="searchField" id="searchField" placeholder="e.g Captain America or Steve Rogers">
+            <button type = "submit" id="searchBtn" class= "btn">Search</button>
         </div>
+      </form>
     </div>
+    <h2>RESULT</h2>
+    <hr class="solid">
+    <div id = "result"></div>
   </body>
 </html>

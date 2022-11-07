@@ -63,10 +63,28 @@ $superheroes = [
   ], 
 ];
 
+$input = $_GET['name'];
+$input= htmlspecialchars($input, ENT_COMPAT);
+$querySearch = false;
+//echo $input;
+
+foreach ($superheroes as $superhero){
+    if($superhero["name"] == $input || $superhero["alias"] == $input){
+        echo "<h3>{$superhero["alias"]}</h3>";
+        echo "<h4> A.K.A {$superhero["name"]}</h4>";
+        echo "<p>{$superhero["biography"]}</p>";
+        $querySearch = true;
+    } elseif (empty($input)){
+        echo "<li>{$superhero['alias']}</li>";
+        $querySearch = true;
+    }
+}
+
+if ($querySearch == false){
+    $string = "Superhero not found!";
+    echo '<span style="color: red; "> ' . $string.  '</span>';
+}
+
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+

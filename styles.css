@@ -14,7 +14,7 @@
     margin-top: 100px;
     margin-left: 400px;
     height: 300px;
-    width: 300px;
+    width: 270px;
     box-shadow: 2px 2px 8px black;
     background-color: #FFF;
 }
@@ -29,4 +29,46 @@
     border-radius: 5px;
     margin-top: 20px;
     margin-left: 180px;
+}
+
+.container {
+    padding: 1em;
+    text-align: center;
+    width: 960px;
+    margin: 0 auto;
+    display: grid;
+}
+
+.form-container,
+h2,
+#result{
+    margin: 20px 300px 0px 300px;
+}
+
+header {
+    color: #FFFFFF;
+    background: #2db34a;
+}
+  
+
+#searchBtn{
+    background-color: #5A67D8;
+    color:#FFFFFF;
+    border-style: none;
+    border-radius: 5px;
+    height: 25px;
+}
+
+#searchField{
+    width: 550px;
+    height:20px;
+}
+
+.form-container p{
+    font-weight: bold;
+}
+
+hr.solid{
+    border-top: 3px solid #bbb;
+    margin: 20px 300px 0px 300px;
 }
